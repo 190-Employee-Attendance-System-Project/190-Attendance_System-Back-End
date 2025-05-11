@@ -11,7 +11,7 @@
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "npm server.js",
     "start:prod": "set NODE_ENV=production && nodemon server.js"
   },
   "dependencies": {
