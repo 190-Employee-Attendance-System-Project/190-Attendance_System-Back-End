@@ -37,7 +37,7 @@ cloudinary.v2.config({
 console.log("Allowed CORS origins:", [
   process.env.FRONTEND_URL,
   process.env.DASHBOARD_URL,
-  process.env.PRODUCTION_URL
+  "https://attendance-system-mu.vercel.app"
 ]);
 app.use(
   cors({
