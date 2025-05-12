@@ -34,17 +34,13 @@ cloudinary.v2.config({
 });
 
 // Allow Cross-Origin requests
-console.log("Allowed CORS origins:", [
-  process.env.FRONTEND_URL,
-  process.env.DASHBOARD_URL,
-  "https://attendance-system-mu.vercel.app"
-]);
 app.use(
   cors({
     origin: [
       process.env.FRONTEND_URL,
       process.env.DASHBOARD_URL,
-      "https://attendance-system-mu.vercel.app"
+      // "https://attendance-system-mu.vercel.app",
+      process.env.PRODUCTION_URL
     ],
     methods: ["GET", "POST", "PATCH", "DELETE"],
     credentials: true
