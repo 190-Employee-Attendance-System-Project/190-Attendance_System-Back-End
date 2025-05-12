@@ -44,7 +44,7 @@ app.use(
     origin: [
       process.env.FRONTEND_URL,
       process.env.DASHBOARD_URL,
-      process.env.PRODUCTION_URL
+      "https://attendance-system-mu.vercel.app"
     ],
     methods: ["GET", "POST", "PATCH", "DELETE"],
     credentials: true
