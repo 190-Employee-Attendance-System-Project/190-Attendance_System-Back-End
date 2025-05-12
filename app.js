@@ -36,7 +36,11 @@ cloudinary.v2.config({
 // Allow Cross-Origin requests
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL, process.env.DASHBOARD_URL],
+    origin: [
+      process.env.FRONTEND_URL,
+      process.env.DASHBOARD_URL,
+      process.env.PRODUCTION_URL
+    ],
     methods: ["GET", "POST", "PATCH", "DELETE"],
     credentials: true
   })
