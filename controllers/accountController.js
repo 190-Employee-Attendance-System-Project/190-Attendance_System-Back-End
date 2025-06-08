@@ -13,11 +13,11 @@ exports.getAllAccounts = catchAsync(async (req, res, next) => {
 //   const newAccount = await Account.create(req.body);
 //   res.status(201).json({ status: "success", data: { account: newAccount } });
 // });
-// exports.getAccount = catchAsync(async (req, res, next) => {
-//   const account = await Account.findById(req.params.id);
-//   if (!account) return next(new AppError("Account not found", 404));
-//   res.status(200).json({ status: "success", data: { account } });
-// });
+exports.getAccount = catchAsync(async (req, res, next) => {
+  const account = await Account.findById(req.params.id);
+  if (!account) return next(new AppError("Account not found", 404));
+  res.status(200).json({ status: "success", data: { account } });
+});
 // exports.updateAccount = catchAsync(async (req, res, next) => {
 //   const updatedAccount = await Account.findByIdAndUpdate(
 //     req.params.id,
