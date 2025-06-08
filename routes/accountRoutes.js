@@ -19,15 +19,13 @@ router
 router
   .route("/updateMyPassword")
   .patch(authController.restrictTo("user"), authController.updatePassword);
-router
-  .route("/")
-  .get(accountController.getAllAccounts)
-  .post(accountController.createAccount);
+router.route("/").get(accountController.getAllAccounts);
+//   .post(accountController.createAccount);
 
 router
   .route("/:id")
-  .get(accountController.getAccount)
-  .patch(accountController.updateAccount)
+  // .get(accountController.getAccount)
+  // .patch(accountController.updateAccount)
   .delete(accountController.deleteAccount);
 
 module.exports = router;

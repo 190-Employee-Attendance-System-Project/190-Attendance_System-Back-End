@@ -12,10 +12,10 @@ const employeeSchema = new mongoose.Schema(
       minlength: [3, "A Employee Name Must Have Less Or Equal 10 Character"]
     },
     image: { type: String, required: [true, "An employee must have an image"] },
-    images: {
-      type: [String]
-      // required: [true, "An employee must have an image"]
-    },
+    // images: {
+    //   type: [String]
+    //   // required: [true, "An employee must have an image"]
+    // },
     emId: { type: String, unique: true },
     slug: String,
     account: {

@@ -19,6 +19,8 @@ const reportSchema = new mongoose.Schema(
     toObject: { virtuals: true }
   }
 );
+// ! Indexing for faster queries( NEED TESTING)
+reportSchema.index({ employee: 1, date: 1 }, { unique: true });
 reportSchema.virtual("timeIn12h").get(function() {
   if (!this.timeIn) return "N/A";
   const timeParts = this.timeIn.split(":");
