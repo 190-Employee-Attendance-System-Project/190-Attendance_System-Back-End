@@ -286,6 +286,7 @@ const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const APIFeatures = require("../utils/apiFeature");
 const Account = require("../Models/accountModel");
+const Report = require("../Models/reportModel");
 
 exports.getEmployeeCountsByShift = catchAsync(async (req, res, next) => {
   const timeTo12Hour = field => ({
@@ -500,10 +501,11 @@ exports.updateEmployee = catchAsync(async (req, res, next) => {
 });
 
 exports.deleteEmployee = catchAsync(async (req, res, next) => {
-  console.log("deleteEmployee: Deleting employee", req.params.id);
+  // console.log("deleteEmployee: Deleting employee", req.params.id);
+  await Report.deleteMany({ employee: req.params.id });
   await Employee.findByIdAndDelete(req.params.id);
   await Account.findOneAndDelete({ employee: req.params.id });
-  console.log("deleteEmployee: Employee deleted successfully");
+  // console.log("deleteEmployee: Employee deleted successfully");
   res.status(204).json({
     status: "success",
     data: null
