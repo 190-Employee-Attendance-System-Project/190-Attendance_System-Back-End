@@ -136,6 +136,7 @@ cloudinary.v2.config({
 app.use(
   cors({
     origin: [
+      "http://localhost:3000",
       process.env.FRONTEND_URL,
       process.env.DASHBOARD_URL,
       // "https://attendance-system-mu.vercel.app",
