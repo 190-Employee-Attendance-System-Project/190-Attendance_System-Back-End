@@ -132,21 +132,21 @@ cloudinary.v2.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-// CORS
-// app.use(
-//   cors({
-//     origin: [
-//       "http://127.0.0.1:3000",
-//       process.env.FRONTEND_URL,
-//       process.env.DASHBOARD_URL,
-//       // "https://attendance-system-mu.vercel.app",
-//       process.env.PRODUCTION_URL
-//     ],
-//     methods: ["GET", "POST", "PATCH", "DELETE"],
-//     credentials: true
-//   })
-// );
-// app.options("*", cors());
+CORS
+app.use(
+  cors({
+    origin: [
+      "http://127.0.0.1:3000",
+      process.env.FRONTEND_URL,
+      process.env.DASHBOARD_URL,
+      // "https://attendance-system-mu.vercel.app",
+      process.env.PRODUCTION_URL
+    ],
+    methods: ["GET", "POST", "PATCH", "DELETE"],
+    credentials: true
+  })
+);
+app.options("*", cors());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
