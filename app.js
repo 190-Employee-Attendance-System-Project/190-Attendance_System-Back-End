@@ -132,7 +132,7 @@ cloudinary.v2.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-CORS
+// CORS
 app.use(
   cors({
     origin: [
